@@ -22,6 +22,8 @@ document.getElementById('generate').addEventListener('click', () => {
     arrayMax = Math.floor(array.length)
     arrayRandom = Math.floor(Math.random() * (arrayMax - min) + min)
 
+    //TO DO: implement random array choosing
+
     if (checkLower) {
       max = Math.floor(lower.length)
       random = Math.floor(Math.random() * (max - min) + min)
