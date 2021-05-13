@@ -14,6 +14,7 @@ document.getElementById('generate').addEventListener('click', () => {
 
   let min = Math.ceil(0), max = 0, random = 0
   let arrayMin = 0, arrayMax = 0, arrayRandom = 0
+  let arrayIndex = []
 
   let password = ""
 
@@ -22,28 +23,45 @@ document.getElementById('generate').addEventListener('click', () => {
     arrayMax = Math.floor(array.length)
     arrayRandom = Math.floor(Math.random() * (arrayMax - min) + min)
 
-    //TO DO: implement random array choosing
-
     if (checkLower) {
-      max = Math.floor(lower.length)
-      random = Math.floor(Math.random() * (max - min) + min)
-      password += lower[random]
+      arrayIndex.push(0)
     }
     if (checkUpper) {
-      max = Math.floor(upper.length)
-      random = Math.floor(Math.random() * (max - min) + min)
-      password += upper[random]
+      arrayIndex.push(1)
     }
     if (checkNumeric) {
-      max = Math.floor(numeric.length)
-      random = Math.floor(Math.random() * (max - min) + min)
-      password += numeric[random]
+      arrayIndex.push(2)
     }
     if (checkSpecial) {
-      max = Math.floor(special.length)
-      random = Math.floor(Math.random() * (max - min) + min)
-      password += special[random]
+      arrayIndex.push(3)
     }
+
+    
+
+    
+
+    //TO DO: implement random array choosing
+
+    // if (checkLower) {
+    //   max = Math.floor(lower.length)
+    //   random = Math.floor(Math.random() * (max - min) + min)
+    //   password += lower[random]
+    // }
+    // if (checkUpper) {
+    //   max = Math.floor(upper.length)
+    //   random = Math.floor(Math.random() * (max - min) + min)
+    //   password += upper[random]
+    // }
+    // if (checkNumeric) {
+    //   max = Math.floor(numeric.length)
+    //   random = Math.floor(Math.random() * (max - min) + min)
+    //   password += numeric[random]
+    // }
+    // if (checkSpecial) {
+    //   max = Math.floor(special.length)
+    //   random = Math.floor(Math.random() * (max - min) + min)
+    //   password += special[random]
+    // }
   }
 
   alert(`Your password is: ${password}`)
