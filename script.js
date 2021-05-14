@@ -40,5 +40,6 @@ document.getElementById('generate').addEventListener('click', () => {
     password += array[arrayIndex[arrayIndexRandom]][random]
   }
 
-  alert(`Your password is: ${password}`)
+  document.getElementById('password').readonly = false
+  document.getElementById('password').textContent = password
 })
