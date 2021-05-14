@@ -14,7 +14,7 @@ document.getElementById('generate').addEventListener('click', () => {
 
   // input validation
   do {
-    let validate = prompt("Enter length of password: ")
+    let validate = prompt("Enter length of password (between 7 and 129): ")
     // input must be a valid integer and be at least 8 characters and no more than 128 characters
     if (Number.isInteger(parseInt(validate)) && parseInt(validate) >= 8 && parseInt(validate) <= 128) {
       length = validate
