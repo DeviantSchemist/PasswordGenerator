@@ -5,8 +5,19 @@ document.getElementById('generate').addEventListener('click', () => {
   let special = '!@#$%^&*()'
 
   let array = [lower, upper, numeric, special]
+  let length = 0
 
-  let length = parseInt(prompt("Enter length of password: "))
+  do {
+    let validate = prompt("Enter length of password: ")
+    if (Number.isInteger(parseInt(validate)) && parseInt(validate) >= 8) {
+      length = validate
+      break
+    }
+    else {
+      alert('Invalid input. Enter again.')
+    }
+  } while (true)
+
   let checkLower = confirm('Use lowercase letters?')
   let checkUpper = confirm('Use uppercase letters?')
   let checkNumeric = confirm('Use numbers?')
