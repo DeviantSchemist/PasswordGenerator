@@ -12,56 +12,32 @@ document.getElementById('generate').addEventListener('click', () => {
   let checkNumeric = confirm('Use numbers?')
   let checkSpecial = confirm('Use special characters?')
 
-  let min = Math.ceil(0), max = 0, random = 0
-  let arrayMin = 0, arrayMax = 0, arrayRandom = 0
+  let min = Math.ceil(0), max = 0, random = 0, arrayIndexMax = 0, arrayIndexRandom = 0
   let arrayIndex = []
+
+  if (checkLower) {
+    arrayIndex.push(0)
+  }
+  if (checkUpper) {
+    arrayIndex.push(1)
+  }
+  if (checkNumeric) {
+    arrayIndex.push(2)
+  }
+  if (checkSpecial) {
+    arrayIndex.push(3)
+  }
 
   let password = ""
 
   for (let i = 0; i < length; i++) {
+    arrayIndexMax = Math.floor(arrayIndex.length)
+    arrayIndexRandom = Math.floor(Math.random() * (arrayIndexMax - min) + min)
 
-    arrayMax = Math.floor(array.length)
-    arrayRandom = Math.floor(Math.random() * (arrayMax - min) + min)
 
-    if (checkLower) {
-      arrayIndex.push(0)
-    }
-    if (checkUpper) {
-      arrayIndex.push(1)
-    }
-    if (checkNumeric) {
-      arrayIndex.push(2)
-    }
-    if (checkSpecial) {
-      arrayIndex.push(3)
-    }
-
-    
-
-    
-
-    //TO DO: implement random array choosing
-
-    // if (checkLower) {
-    //   max = Math.floor(lower.length)
-    //   random = Math.floor(Math.random() * (max - min) + min)
-    //   password += lower[random]
-    // }
-    // if (checkUpper) {
-    //   max = Math.floor(upper.length)
-    //   random = Math.floor(Math.random() * (max - min) + min)
-    //   password += upper[random]
-    // }
-    // if (checkNumeric) {
-    //   max = Math.floor(numeric.length)
-    //   random = Math.floor(Math.random() * (max - min) + min)
-    //   password += numeric[random]
-    // }
-    // if (checkSpecial) {
-    //   max = Math.floor(special.length)
-    //   random = Math.floor(Math.random() * (max - min) + min)
-    //   password += special[random]
-    // }
+    max = Math.floor(array[arrayIndex[arrayIndexRandom]].length)
+    random = Math.floor(Math.random() * (max - min) + min)
+    password += array[arrayIndex[arrayIndexRandom]][random]
   }
 
   alert(`Your password is: ${password}`)
