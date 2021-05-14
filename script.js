@@ -26,10 +26,20 @@ document.getElementById('generate').addEventListener('click', () => {
   } while (true)
 
   // the password criteria
-  let checkLower = confirm('Use lowercase letters?')
-  let checkUpper = confirm('Use uppercase letters?')
-  let checkNumeric = confirm('Use numbers?')
-  let checkSpecial = confirm('Use special characters?')
+  let checkLower = false
+  let checkUpper = false
+  let checkNumeric = false
+  let checkSpecial = false
+  do {
+    checkLower = confirm('Use lowercase letters?')
+    checkUpper = confirm('Use uppercase letters?')
+    checkNumeric = confirm('Use numbers?')
+    checkSpecial = confirm('Use special characters?')
+
+    if (!checkLower && !checkUpper && !checkNumeric && !checkSpecial) {
+      alert('MUST select at least one criteria.')
+    }
+  } while (!checkLower && !checkUpper && !checkNumeric && !checkSpecial)
 
   // variables used to randomize
   let min = Math.ceil(0), max = 0, random = 0, arrayIndexMax = 0, arrayIndexRandom = 0
