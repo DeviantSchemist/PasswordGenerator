@@ -4,7 +4,7 @@ document.getElementById('generate').addEventListener('click', () => {
   let lower = 'abcdefghijklmnopqrstuvwxyz'
   let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let numeric = '0123456789'
-  let special = '!@#$%^&*()'
+  let special = ' !\"#$%&\'() * +,-./: ;<=>?@[\]^ _`{|}~'
 
   // put all the sets into an array for indexing
   let array = [lower, upper, numeric, special]
