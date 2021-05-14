@@ -30,6 +30,8 @@ document.getElementById('generate').addEventListener('click', () => {
   let checkUpper = false
   let checkNumeric = false
   let checkSpecial = false
+
+  // forces user to select at least one criteria
   do {
     checkLower = confirm('Use lowercase letters?')
     checkUpper = confirm('Use uppercase letters?')
